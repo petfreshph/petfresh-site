@@ -71,7 +71,7 @@ export default function WhyPetFresh() {
           </div>
         </div>
 
-        {/* --- 3. SCIENCE SECTION (Mobile Tightened) --- */}
+        {/* --- 3. SCIENCE SECTION --- */}
         <div className="mt-16 md:mt-24"> 
           <FadeIn direction="up">
             <div className="text-center mb-10 md:mb-16">
@@ -82,6 +82,7 @@ export default function WhyPetFresh() {
             </div>
           </FadeIn>
 
+          {/* Added items-center here for vertical alignment across the row */}
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 md:gap-16">
             
             {/* Left Column Actives */}
@@ -102,9 +103,9 @@ export default function WhyPetFresh() {
               </FadeIn>
             </div>
 
-            {/* Center: DNA HELIX */}
+            {/* Center: DNA HELIX - Pushed down with translate-y-8 for vertical center */}
             <FadeIn direction="up" delay={0.3}>
-              <div className="relative w-64 h-48 md:h-80 flex items-center justify-center">
+              <div className="relative w-64 h-48 md:h-80 flex items-center justify-center md:translate-y-8">
                 <div className="dna-container">
                   {Array.from({ length: 12 }).map((_, i) => (
                     <div 
@@ -148,12 +149,12 @@ export default function WhyPetFresh() {
           position: relative;
           width: 40px;
           height: 100%;
-          --dna-spacing: 15px; /* Default for mobile */
+          --dna-spacing: 15px;
         }
         
         @media (min-width: 768px) {
           .dna-container {
-            --dna-spacing: 25px; /* Spaced out for desktop */
+            --dna-spacing: 25px;
           }
         }
 
