@@ -62,7 +62,7 @@ export default function StoryPage() {
 
           <div className="md:col-span-7 space-y-6 text-base md:text-lg text-[#1A1A1A]/80 font-light leading-relaxed">
             <p>
-              Pet Fresh began at home. As a mother of children with <strong>hyper-sensitive skin</strong>, our founder spent years navigating the world of dermatological care—learning which botanical extracts truly soothed and which chemicals caused harm.
+              Pet Fresh began at home. As a mother of children with <strong>hyper-sensitive skin</strong>, our founder spent years navigating the world of dermatological care, learning which botanical extracts truly soothed and which chemicals caused harm.
             </p>
             <p className="italic text-[#1A1A1A]/60 border-l-2 border-[#8B7E6A] pl-6 py-2">
               &quot;I realized that while the world was full of gentle, high-end solutions for our children, the options for our pets remained harsh and unregulated.&quot;
