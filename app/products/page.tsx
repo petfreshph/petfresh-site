@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Nav from "../components/Nav";
+import FadeIn from "../components/FadeIn";
 import { Fraunces, Inter } from "next/font/google";
 
 const fraunces = Fraunces({
@@ -49,29 +50,33 @@ export default function ShopPage() {
     <main className={`w-full min-h-screen flex flex-col ${inter.className} bg-[#F4EFE7]`}>
       <Nav />
       
-      {/* --- HEADER: Adjusted Padding --- */}
+      {/* --- HEADER --- */}
       <section className="pt-32 md:pt-48 pb-8 md:pb-12 px-6 md:px-12 text-center max-w-4xl mx-auto">
-        <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8B7E6A] mb-4 block">Our Collection</span>
-        <h1 className={`${fraunces.className} text-4xl md:text-6xl text-[#1A1A1A] mb-4 md:mb-6 leading-tight tracking-tight`}>
-          Grooming essentials
-        </h1>
-        <p className="text-base md:text-lg text-[#1A1A1A]/60 leading-relaxed max-w-2xl mx-auto font-light">
-          Formulated with botanical extracts to ensure safety and efficacy for your most delicate companions.
-        </p>
+        <FadeIn direction="up">
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#8B7E6A] mb-4 block">Our Collection</span>
+          <h1 className={`${fraunces.className} text-4xl md:text-6xl text-[#1A1A1A] mb-4 md:mb-6 leading-tight tracking-tight`}>
+            Grooming essentials
+          </h1>
+          <p className="text-base md:text-lg text-[#1A1A1A]/60 leading-relaxed max-w-2xl mx-auto font-light">
+            Formulated with botanical extracts to ensure safety and efficacy for your most delicate companions.
+          </p>
+        </FadeIn>
       </section>
 
-      {/* --- SHOWROOM IMAGE: Tightened Margins --- */}
+      {/* --- SHOWROOM IMAGE --- */}
       <section className="px-6 md:px-12 max-w-[1440px] mx-auto w-full mb-8 md:mb-12">
-        <div className="relative h-[300px] md:h-[600px] w-full rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl">
-          <Image 
-            src="/images/product-page.jpg" 
-            alt="Pet Fresh Digital Showroom" 
-            fill 
-            className="object-cover transition-transform duration-1000 hover:scale-105"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/5" />
-        </div>
+        <FadeIn direction="up" delay={0.2}>
+          <div className="relative h-[300px] md:h-[600px] w-full rounded-[1.5rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl">
+            <Image 
+              src="/images/product-page.jpg" 
+              alt="Pet Fresh Digital Showroom" 
+              fill 
+              className="object-cover transition-transform duration-1000 hover:scale-105"
+              priority
+            />
+            <div className="absolute inset-0 bg-black/5" />
+          </div>
+        </FadeIn>
       </section>
 
       {/* --- PRODUCT SECTIONS --- */}
@@ -86,17 +91,21 @@ export default function ShopPage() {
 function ProductSection({ index, title, description, products, columns, isHighlight }: any) {
   return (
     <section className={`border-t border-black/5 pt-12 md:pt-20 pb-16 md:pb-24 px-6 md:px-12 max-w-[1440px] mx-auto w-full ${isHighlight ? 'bg-white/20' : ''}`}>
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-4 md:gap-6">
-        <div className="flex items-baseline gap-3 md:gap-4">
-          <span className="text-xs font-serif italic text-[#8B7E6A]">{index}</span>
-          <h2 className={`${fraunces.className} text-2xl md:text-3xl text-[#1A1A1A]`}>{title}</h2>
+      <FadeIn direction="up">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-16 gap-4 md:gap-6">
+          <div className="flex items-baseline gap-3 md:gap-4">
+            <span className="text-xs font-serif italic text-[#8B7E6A]">{index}</span>
+            <h2 className={`${fraunces.className} text-2xl md:text-3xl text-[#1A1A1A]`}>{title}</h2>
+          </div>
+          <p className="max-w-md text-xs md:text-sm text-[#1A1A1A]/50 leading-relaxed">{description}</p>
         </div>
-        <p className="max-w-md text-xs md:text-sm text-[#1A1A1A]/50 leading-relaxed">{description}</p>
-      </div>
+      </FadeIn>
 
       <div className={`grid grid-cols-1 sm:grid-cols-2 ${columns} gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-20`}>
-        {products.map((product: any) => (
-          <ProductCard key={product.id} product={product} />
+        {products.map((product: any, i: number) => (
+          <FadeIn key={product.id} direction="up" delay={i * 0.1}>
+            <ProductCard product={product} />
+          </FadeIn>
         ))}
       </div>
     </section>
@@ -106,7 +115,6 @@ function ProductSection({ index, title, description, products, columns, isHighli
 function ProductCard({ product }: { product: any }) {
   return (
     <div className="group flex flex-col h-full items-center text-center">
-      
       {/* IMAGE CONTAINER */}
       <div className="relative h-[250px] md:h-[300px] w-full flex items-end justify-center mb-6 md:mb-8">
         <div className="absolute bottom-6 w-1/2 h-6 bg-black/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />

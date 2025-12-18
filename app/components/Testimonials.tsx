@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { Fraunces } from "next/font/google";
+import FadeIn from "./FadeIn";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -9,7 +12,6 @@ const fraunces = Fraunces({
 
 export default function Testimonials() {
   return (
-    // CHANGE: Changed 'py-16' to 'pt-0 pb-16' (Removed Top Padding)
     <section className="relative w-full bg-[#F4EFE7] pt-0 pb-16 md:pb-20">
       
       {/* Texture Overlay */}
@@ -19,67 +21,77 @@ export default function Testimonials() {
       <div className="relative mx-auto max-w-7xl px-8 md:px-12">
         
         {/* 1. SECTION HEADER */}
-        <div className="mb-10 text-center">
-          <span className="inline-block rounded-full border border-[#8B7E6A]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#8B7E6A]">
-            Community Love
-          </span>
-          <h2 className={`${fraunces.className} mt-6 text-3xl md:text-5xl font-semibold text-[#1A1A1A]`}>
-            Stories of <span className="italic text-[#8B7E6A]">comfort.</span>
-          </h2>
-        </div>
+        <FadeIn direction="up">
+          <div className="mb-10 text-center">
+            <span className="inline-block rounded-full border border-[#8B7E6A]/30 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-[#8B7E6A]">
+              Community Love
+            </span>
+            <h2 className={`${fraunces.className} mt-6 text-3xl md:text-5xl font-semibold text-[#1A1A1A]`}>
+              Stories of <span className="italic text-[#8B7E6A]">comfort.</span>
+            </h2>
+          </div>
+        </FadeIn>
 
-        {/* 2. TRUST BAR */}
-        <div className="mb-12 flex flex-col items-center justify-center gap-6 border-y border-[#1A1A1A]/10 py-6 md:flex-row md:gap-16">
-            <div className="flex items-center gap-4">
-                <div className="flex text-[#8B7E6A]">
-                    {[...Array(5)].map((_, i) => (
-                        <StarIcon key={i} />
-                    ))}
-                </div>
-                <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
-                    4.9/5 Average Rating
-                </span>
-            </div>
-            <div className="hidden h-1 w-1 rounded-full bg-[#1A1A1A]/20 md:block" />
-            <div className="flex items-center gap-4">
-                <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
-                   100% Hypoallergenic
-                </span>
-            </div>
-            <div className="hidden h-1 w-1 rounded-full bg-[#1A1A1A]/20 md:block" />
-            <div className="flex items-center gap-4">
-                <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
-                   Vet Approved Formula
-                </span>
-            </div>
-        </div>
+        {/* 2. TRUST BAR - Quick fade in to establish authority */}
+        <FadeIn direction="up" delay={0.2}>
+          <div className="mb-12 flex flex-col items-center justify-center gap-6 border-y border-[#1A1A1A]/10 py-6 md:flex-row md:gap-16">
+              <div className="flex items-center gap-4">
+                  <div className="flex text-[#8B7E6A]">
+                      {[...Array(5)].map((_, i) => (
+                          <StarIcon key={i} />
+                      ))}
+                  </div>
+                  <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
+                      4.9/5 Average Rating
+                  </span>
+              </div>
+              <div className="hidden h-1 w-1 rounded-full bg-[#1A1A1A]/20 md:block" />
+              <div className="flex items-center gap-4">
+                  <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
+                     100% Hypoallergenic
+                  </span>
+              </div>
+              <div className="hidden h-1 w-1 rounded-full bg-[#1A1A1A]/20 md:block" />
+              <div className="flex items-center gap-4">
+                  <span className="text-sm font-medium uppercase tracking-wider text-[#1A1A1A]">
+                    Vet Approved Formula
+                  </span>
+              </div>
+          </div>
+        </FadeIn>
 
-        {/* 3. REVIEWS GRID */}
+        {/* 3. REVIEWS GRID - Staggered reveals */}
         <div className="grid gap-6 md:grid-cols-3">
           
-          <ReviewCard
-            quote="This is my second time to order. The ear cleaner works well with our furbaby who is prone to getting otitis."
-            author="d*****i"
-            pet="Returning Customer"
-            platform="Shopee"
-          />
-
-          <div className="md:translate-y-12">
+          <FadeIn direction="up" delay={0.3}>
             <ReviewCard
-              quote="Eliminates undesirable smell in their ears in just one application. Quality is beyond expectation. A must for every pet owner."
-              author="pandacab"
+              quote="This is my second time to order. The ear cleaner works well with our furbaby who is prone to getting otitis."
+              author="d*****i"
+              pet="Returning Customer"
+              platform="Shopee"
+            />
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.5}>
+            <div className="md:translate-y-12">
+              <ReviewCard
+                quote="Eliminates undesirable smell in their ears in just one application. Quality is beyond expectation. A must for every pet owner."
+                author="pandacab"
+                pet="Verified Buyer"
+                platform="Shopee"
+                highlight
+              />
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="up" delay={0.7}>
+            <ReviewCard
+              quote="Performance is amazing. Super soft ng fur nila when it dried and subtle yung scent. Hindi masakit sa ilong. Very relaxing."
+              author="anne_rho"
               pet="Verified Buyer"
               platform="Shopee"
-              highlight
             />
-          </div>
-
-          <ReviewCard
-            quote="Performance is amazing. Super soft ng fur nila when it dried and subtle yung scent. Hindi masakit sa ilong. Very relaxing."
-            author="anne_rho"
-            pet="Verified Buyer"
-            platform="Shopee"
-          />
+          </FadeIn>
 
         </div>
       </div>
@@ -87,7 +99,6 @@ export default function Testimonials() {
   );
 }
 
-// ... Keep Subcomponents (ReviewCard, StarIcon) the same ...
 function ReviewCard({ 
     quote, 
     author, 
@@ -103,11 +114,11 @@ function ReviewCard({
 }) {
   return (
     <div className={`
-        flex flex-col justify-between rounded-3xl 
-        p-6 
+        flex h-full flex-col justify-between rounded-3xl 
+        p-8 
         transition-all duration-500 hover:-translate-y-2 hover:shadow-xl
         ${highlight 
-            ? 'bg-[#1A1A1A] text-white shadow-2xl' 
+            ? 'bg-[#1A1A1A] text-white shadow-2xl scale-105 z-10' 
             : 'bg-white/60 backdrop-blur-sm text-[#1A1A1A] shadow-sm border border-white/50'
         }
     `}>
@@ -126,13 +137,13 @@ function ReviewCard({
         </p>
       </div>
 
-      <div className="flex items-center justify-between border-t border-current/10 pt-4">
+      <div className={`flex items-center justify-between border-t pt-4 ${highlight ? 'border-white/10' : 'border-black/10'}`}>
         <div>
             <p className="text-sm font-bold uppercase tracking-widest">{author}</p>
-            <p className={`text-xs ${highlight ? 'text-white/60' : 'text-muted'}`}>{pet}</p>
+            <p className={`text-[10px] font-bold uppercase tracking-tighter ${highlight ? 'text-[#8B7E6A]' : 'text-[#8B7E6A]'}`}>{pet}</p>
         </div>
         <div className="flex items-center gap-1 opacity-50">
-            <span className="text-[10px] font-bold uppercase tracking-widest">Via {platform}</span>
+            <span className="text-[10px] font-bold uppercase tracking-widest italic">Via {platform}</span>
         </div>
       </div>
     </div>
