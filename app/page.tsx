@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link"; // Added for fast internal navigation
+import Link from "next/link";
 import Nav from "./components/Nav";
 import WhyPetFresh from "./components/WhyPetFresh";
 import Testimonials from "./components/Testimonials";
@@ -20,7 +20,7 @@ export default function HomePage() {
     <main className="w-full overflow-x-hidden bg-[#F4EFE7]">
       <Nav />
 
-      {/* 2. HERO SECTION - RESPONSIVE OPTIMIZATION */}
+      {/* 2. HERO SECTION */}
       <section className="relative h-[85vh] md:h-[82vh] min-h-[600px] w-full overflow-hidden">
         
         {/* VIDEO BACKGROUND */}
@@ -37,7 +37,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/5 opacity-50 pointer-events-none mix-blend-overlay"></div>
         </div>
         
-        {/* BOTTLE IMAGE */}
+        {/* BOTTLE IMAGE (Desktop Only) */}
         <div className="pointer-events-none absolute right-[-10%] md:right-[-4.5%] bottom-[5%] z-20 hidden sm:block animate-fade-in-delayed">
           <Image
             src="/images/vanilla-comfort-shadow.png"
@@ -51,26 +51,27 @@ export default function HomePage() {
 
         {/* GRADIENT OVERLAY */}
         <div className="absolute inset-0 z-10">
-           <div className="absolute inset-0 bg-gradient-to-r from-[#F4EFE7] via-[#F4EFE7]/90 md:via-[#F4EFE7]/80 to-transparent w-[90%] md:w-[55%] mix-blend-normal" />
+           {/* Mobile: Bottom-to-top gradient to help brown text pop | Desktop: Left-to-right */}
+           <div className="absolute inset-0 bg-gradient-to-t from-[#F4EFE7] via-[#F4EFE7]/40 to-transparent md:bg-gradient-to-r md:from-[#F4EFE7] md:via-[#F4EFE7]/80 md:to-transparent w-full md:w-[55%]" />
            <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#F4EFE7] to-transparent" />
         </div>
 
-        {/* HERO TEXT CONTENT */}
-        <div className="relative z-20 flex h-full items-center">
+        {/* HERO TEXT CONTENT - FIXED FOR MOBILE DOG VISIBILITY */}
+        {/* Changed items-center to items-end on mobile to push text down, md:items-center for desktop */}
+        <div className="relative z-20 flex h-full items-end md:items-center pb-16 md:pb-0">
           <div className="max-w-2xl px-6 md:px-16">
-            <h1 className={`${fraunces.className} text-[2.75rem] md:text-5xl lg:text-6xl font-semibold leading-[1.1] animate-fade-up`}>
-              <span className="text-[#1A1A1A]">Calm care</span>
+            <h1 className={`${fraunces.className} text-[2.75rem] md:text-5xl lg:text-6xl font-semibold leading-[1.1] animate-fade-up text-[#2A241E]`}>
+              <span>Calm care</span>
               <br />
               <span className="text-[#8B7E6A] italic font-medium">
                 for sensitive dogs
               </span>
             </h1>
-            <p className="mt-6 text-base md:text-xl text-muted leading-relaxed max-w-sm md:max-w-lg animate-fade-up [animation-delay:200ms]">
+            <p className="mt-6 text-base md:text-xl text-[#2A241E]/80 leading-relaxed max-w-sm md:max-w-lg animate-fade-up [animation-delay:200ms]">
               A gentle shampoo and conditioner designed to soothe skin,
               soften coats, and turn bath time into a calm ritual.
             </p>
             
-            {/* BUTTONS WITH LINK LOGIC */}
             <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4 animate-fade-up [animation-delay:400ms]">
               <Link href="/products" className="w-full sm:w-auto">
                 <button className="w-full rounded-full bg-[#1A1A1A] px-7 py-4 text-xs md:text-sm font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#8B7E6A] duration-300">
