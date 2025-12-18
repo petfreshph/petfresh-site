@@ -20,37 +20,32 @@ export default function GroomersPage() {
     <main className={`w-full min-h-screen bg-[#F4EFE7] ${inter.className} relative`}>
       <Nav />
 
-     {/* --- 1. THE VIDEO: FULL SCREEN ANCHOR --- */}
+      {/* --- 1. THE VIDEO: FULL SCREEN ANCHOR --- */}
       <div className="absolute top-0 left-0 z-0 h-screen w-full overflow-hidden">
         <video
-          className="h-full w-full object-cover object-center brightness-[0.7] saturate-[0.8]"
+          className="h-full w-full object-cover object-center brightness-[0.85] saturate-[0.8]"
           src="videos/groomers.mp4"
           autoPlay
           loop
           muted
           playsInline
         />
-        {/* We use a very heavy bottom gradient here to "catch" the text */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-50% to-[#F4EFE7]" />
+        {/* Adjusted gradient for brown text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent via-50% to-[#F4EFE7]" />
       </div>
 
       <div className="relative z-10">
-        {/* --- 2. THE HERO: PUSHED TO THE ABSOLUTE LIMIT --- */}
-        {/* pt-[85vh] pushes the text to the bottom 15% of the screen */}
+        {/* --- 2. THE HERO: BROWN TEXT FOR LEGIBILITY --- */}
         <section className="pt-[85vh] pb-20 px-6 md:px-12 max-w-7xl mx-auto text-center">
-          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white drop-shadow-md mb-6 block">
+          {/* Tagline in brand brown */}
+          <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-[#8B7E6A] drop-shadow-sm mb-6 block">
             Professional Division
           </span>
-          <h1 className={`${fraunces.className} text-4xl md:text-8xl text-white leading-[1.1] drop-shadow-xl`}>
+          {/* Main heading in deep charcoal-brown for maximum contrast */}
+          <h1 className={`${fraunces.className} text-4xl md:text-8xl text-[#2A241E] leading-[1.1] drop-shadow-sm`}>
             Bulk Solutions. <br />
-            <span className="italic font-medium text-white/90">Professional Results.</span>
+            <span className="italic font-medium text-[#8B7E6A]">Professional Results.</span>
           </h1>
-        </section>
-
-        {/* --- 3. THE TRANSITION --- */}
-        {/* This is the Price List that now starts exactly where the video ends */}
-        <section className="relative bg-[#F4EFE7] py-12 px-4 md:px-12 max-w-6xl mx-auto">
-           {/* Price list table code goes here... */}
         </section>
 
         {/* --- 3. PRICE LIST: MOBILE OPTIMIZED TABLE --- */}
@@ -131,7 +126,7 @@ export default function GroomersPage() {
           </div>
         </section>
 
-        {/* --- 4. FORM: REDUCED VERTICAL GAPS --- */}
+        {/* --- 4. FORM --- */}
         <section className="py-12 md:py-24 px-6 md:px-12 max-w-2xl mx-auto">
           <div className="bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-2xl border border-white">
             <div className="text-center mb-8 md:mb-10">
@@ -183,7 +178,6 @@ export default function GroomersPage() {
   );
 }
 
-// --- HELPER COMPONENT ---
 function QuantityRow({ label, name, isHighlight }: { label: string, name: string, isHighlight?: boolean }) {
   return (
     <div className="flex items-center justify-between border-b border-black/5 py-3">
