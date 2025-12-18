@@ -20,30 +20,37 @@ export default function GroomersPage() {
     <main className={`w-full min-h-screen bg-[#F4EFE7] ${inter.className} relative`}>
       <Nav />
 
-      {/* --- 1. CINEMATIC BACKGROUND: RESPONSIVE HEIGHT --- */}
-      <div className="absolute inset-0 z-0 h-[85vh] md:h-[80vh] w-full overflow-hidden">
+     {/* --- 1. THE VIDEO: FULL SCREEN ANCHOR --- */}
+      <div className="absolute top-0 left-0 z-0 h-screen w-full overflow-hidden">
         <video
-          className="h-full w-full object-cover object-bottom brightness-[0.7] saturate-[0.8]"
+          className="h-full w-full object-cover object-center brightness-[0.7] saturate-[0.8]"
           src="videos/groomers.mp4"
           autoPlay
           loop
           muted
           playsInline
         />
-        {/* Consistent Anchor Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-[#F4EFE7]" />
+        {/* We use a very heavy bottom gradient here to "catch" the text */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent via-50% to-[#F4EFE7]" />
       </div>
 
       <div className="relative z-10">
-        {/* --- 2. HERO: RESPONSIVE TEXT SCALING --- */}
-        <section className="pt-48 md:pt-64 pb-12 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto text-center">
+        {/* --- 2. THE HERO: PUSHED TO THE ABSOLUTE LIMIT --- */}
+        {/* pt-[85vh] pushes the text to the bottom 15% of the screen */}
+        <section className="pt-[85vh] pb-20 px-6 md:px-12 max-w-7xl mx-auto text-center">
           <span className="text-[10px] font-bold uppercase tracking-[0.5em] text-white drop-shadow-md mb-6 block">
             Professional Division
           </span>
-          <h1 className={`${fraunces.className} text-4xl md:text-8xl text-white leading-[1.1] mb-8 drop-shadow-xl`}>
+          <h1 className={`${fraunces.className} text-4xl md:text-8xl text-white leading-[1.1] drop-shadow-xl`}>
             Bulk Solutions. <br />
             <span className="italic font-medium text-white/90">Professional Results.</span>
           </h1>
+        </section>
+
+        {/* --- 3. THE TRANSITION --- */}
+        {/* This is the Price List that now starts exactly where the video ends */}
+        <section className="relative bg-[#F4EFE7] py-12 px-4 md:px-12 max-w-6xl mx-auto">
+           {/* Price list table code goes here... */}
         </section>
 
         {/* --- 3. PRICE LIST: MOBILE OPTIMIZED TABLE --- */}
