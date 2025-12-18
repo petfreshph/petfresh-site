@@ -27,7 +27,7 @@ export default function HomePage() {
        {/* VIDEO BACKGROUND */}
 <div className="absolute inset-0 pt-16 md:pt-0"> {/* This adds space at the top on mobile only */}
   <video
-    className="h-full w-full object-cover object-bottom"
+    className="h-full w-full object-cover object-center"
     src="/videos/heromain.mp4"
     autoPlay
     loop
