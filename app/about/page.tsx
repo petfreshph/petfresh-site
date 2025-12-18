@@ -50,7 +50,7 @@ export default function StoryPage() {
       </section>
 
       {/* --- 2. PHILOSOPHY --- */}
-      <section className="relative -mt-16 md:-mt-20 z-20 py-12 md:py-24 px-6 md:px-12 max-w-5xl mx-auto">
+      <section className="relative -mt-16 md:-mt-20 z-20 py-12 md:py-20 px-6 md:px-12 max-w-5xl mx-auto">
         <FadeIn direction="up" delay={0.2}>
           <div className="bg-white/95 backdrop-blur-md p-8 md:p-20 shadow-2xl rounded-[2rem] md:rounded-[3rem] grid md:grid-cols-12 gap-8 md:gap-12 items-start border border-white/50">
             
@@ -78,7 +78,8 @@ export default function StoryPage() {
       </section>
 
       {/* --- 3. FARMER CONNECTION --- */}
-      <section className="py-12 md:py-24 px-6 md:px-12 max-w-7xl mx-auto overflow-hidden">
+      {/* Tightened py-12 md:py-24 to py-8 md:py-16 and removed overflow to keep it snug */}
+      <section className="py-8 md:py-16 px-6 md:px-12 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
           <FadeIn direction="left">
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl md:rotate-2">
@@ -125,7 +126,8 @@ export default function StoryPage() {
       </section>
 
       {/* --- 4. FINAL PROMISE --- */}
-      <section className="py-24 md:py-40 px-8 text-center bg-[#1A1A1A] text-[#F4EFE7] rounded-t-[2.5rem] md:rounded-t-[5rem]">
+      {/* Reduced py-24 md:py-40 to py-16 md:py-24 to eliminate the blank-space feel */}
+      <section className="py-16 md:py-24 px-8 text-center bg-[#1A1A1A] text-[#F4EFE7] rounded-t-[2.5rem] md:rounded-t-[5rem]">
         <FadeIn direction="up">
           <div className="max-w-3xl mx-auto space-y-8 md:space-y-12">
             <div className="flex justify-center items-center gap-4">
