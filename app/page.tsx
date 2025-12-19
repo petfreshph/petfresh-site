@@ -22,7 +22,7 @@ export default function HomePage() {
     <main className="relative bg-[#F4EFE7]">
       <Nav />
 
-      {/* 1. HERO SECTION */}
+{/* 1. HERO SECTION */}
       <section className="relative h-[85vh] md:h-[82vh] min-h-[600px] w-full overflow-hidden">
         {/* VIDEO BACKGROUND */}
         <div className="absolute inset-0 pt-16 md:pt-0">
@@ -38,15 +38,15 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-black/5 opacity-50 pointer-events-none mix-blend-overlay"></div>
         </div>
         
-        {/* BOTTLE IMAGE */}
-        <div className="pointer-events-none absolute right-[-10%] md:right-[-4.5%] bottom-[5%] z-20 hidden sm:block">
+        {/* BOTTLE IMAGE - Now hidden on mobile/tablet, only visible on lg (desktop) */}
+        <div className="pointer-events-none absolute right-[-10%] lg:right-[-4.5%] bottom-[5%] z-20 hidden lg:block">
           <FadeIn direction="right" delay={0.6}>
             <Image
               src="/images/vanilla-comfort-shadow.png"
               alt="Pet Fresh Vanilla Comfort Formula"
               width={320}
               height={620}
-              className="w-[200px] md:w-[320px] opacity-[0.98] contrast-[1.05] saturate-[0.95] drop-shadow-[0_25px_25px_rgba(0,0,0,0.35)]"
+              className="w-[320px] opacity-[0.98] contrast-[1.05] saturate-[0.95] drop-shadow-[0_25px_25px_rgba(0,0,0,0.35)]"
               priority
             />
           </FadeIn>
