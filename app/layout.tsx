@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://petfresh.ph", 
+    url: "https://petfreshph.com", 
     siteName: "Pet Fresh Philippines",
     title: "Pet Fresh | Veterinary-Grade Organic Pet Care",
     description: "Switch to the #1 choice for sensitive dogs. Organic shampoo and ear wash rituals powered by Soil, Spirit, & Science.",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
 
   // 5. Canonical URL to prevent duplicate content penalties
   alternates: {
-    canonical: 'https://petfresh.ph',
+    canonical: 'https://petfreshph.com',
   },
 };
 
@@ -87,8 +87,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "Pet Fresh Philippines",
-              "url": "https://petfresh.ph",
-              "logo": "https://petfresh.ph/logo.png",
+              "url": "https://petfreshph.com",
+              "logo": "https://petfreshph.com/logo.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+63-YOUR-NUMBER", // Replace with your contact info
