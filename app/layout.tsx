@@ -5,21 +5,20 @@ import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "Pet Fresh | #1 Organic Dog Shampoo & Ear Cleaner Philippines",
+    default: "Pet Fresh | Organic Dog Shampoo & Ear Cleaner Philippines",
     template: "%s | Pet Fresh Organic Pet Care",
   },
   description:
-    "Veterinary-strength organic pet care formulated by chemists. Best-selling Madre de Cacao dog shampoo for sensitive skin and biocompatible ear cleaner for infections and odors. Proudly Philippine-made.",
+    "Veterinary-grade organic pet care in the Philippines. Best-selling dog shampoo for sensitive skin and gentle ear cleaner formulated for tropical climates.",
   keywords: [
     "Dog Shampoo Philippines",
     "Organic Pet Ear Cleaner",
-    "Best Dog Ear Wash for Infections",
+    "Best Dog Ear Cleaner",
+    "Sensitive Dog Skin Philippines",
     "Hypoallergenic Dog Shampoo",
-    "Madre de Cacao Pet Grooming",
-    "Bulk Pet Shampoo for Groomers",
-    "Sensitive Dog Skin Treatment",
-    "Pet Fresh Lite",
-    "Natural Dog Deodorizer",
+    "Madre de Cacao Dog Shampoo",
+    "Pet Care Philippines",
+    "Vet Grade Pet Care",
   ],
   authors: [{ name: "Pet Fresh Philippines" }],
   creator: "Pet Fresh",
@@ -31,9 +30,9 @@ export const metadata: Metadata = {
     locale: "en_PH",
     url: "https://petfreshph.com",
     siteName: "Pet Fresh Philippines",
-    title: "Pet Fresh | Veterinary-Grade Organic Pet Care",
+    title: "Pet Fresh | Veterinary-Grade Pet Care in the Philippines",
     description:
-      "Switch to the #1 choice for sensitive dogs. Organic shampoo and ear wash rituals powered by Soil, Spirit, & Science.",
+      "Organic dog shampoo and ear cleaner designed for sensitive skin and tropical climates. Trusted by pet owners and groomers nationwide.",
     images: [
       {
         url: "/images/og-main.jpg",
@@ -45,9 +44,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pet Fresh PH | Organic & Hypoallergenic Grooming",
+    title: "Pet Fresh PH | Organic & Vet-Grade Dog Care",
     description:
-      "The most trusted Madre de Cacao formula for sensitive dogs in the Philippines.",
+      "Gentle, pH-balanced pet care for dogs living in tropical climates.",
     images: ["/images/og-main.jpg"],
     creator: "@petfreshph",
   },
@@ -67,7 +66,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
+        
         {/* Meta Pixel */}
         <Script
           id="meta-pixel"
@@ -87,9 +87,7 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
 
-      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
         {/* Global Organization Schema */}
         <script
           type="application/ld+json"
@@ -102,7 +100,6 @@ export default function RootLayout({
               logo: "https://petfreshph.com/logo.png",
               contactPoint: {
                 "@type": "ContactPoint",
-                telephone: "+63-YOUR-NUMBER",
                 contactType: "customer service",
                 areaServed: "PH",
                 availableLanguage: "English",
@@ -110,6 +107,7 @@ export default function RootLayout({
               sameAs: [
                 "https://facebook.com/petfreshph",
                 "https://instagram.com/petfreshph",
+                "https://www.tiktok.com/@pet_freshph",
               ],
             }),
           }}
