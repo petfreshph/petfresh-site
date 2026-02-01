@@ -22,9 +22,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Pet Fresh Philippines" }],
   creator: "Pet Fresh",
-  verification: {
-    google: "your-google-verification-code",
-  },
   openGraph: {
     type: "website",
     locale: "en_PH",
@@ -66,8 +63,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
-        
+      <head>
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y8CFVT14W2"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="ga4-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-Y8CFVT14W2', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+
         {/* Meta Pixel */}
         <Script
           id="meta-pixel"
@@ -87,8 +103,10 @@ export default function RootLayout({
             `,
           }}
         />
+      </head>
 
-        {/* Global Organization Schema */}
+      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -98,12 +116,6 @@ export default function RootLayout({
               name: "Pet Fresh Philippines",
               url: "https://petfreshph.com",
               logo: "https://petfreshph.com/logo.png",
-              contactPoint: {
-                "@type": "ContactPoint",
-                contactType: "customer service",
-                areaServed: "PH",
-                availableLanguage: "English",
-              },
               sameAs: [
                 "https://facebook.com/petfreshph",
                 "https://instagram.com/petfreshph",
