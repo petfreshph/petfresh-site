@@ -136,46 +136,48 @@ export default function HomePage() {
           <div className="mt-8 flex flex-col sm:flex-row gap-3 md:gap-4">
 
             {/* Shopee */}
-            <button
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).fbq) {
-                  (window as any).fbq("track", "AddToCart", {
-                    content_name: "Pet Fresh Ear Cleaner",
-                    content_type: "product",
-                    platform: "Shopee",
-                  });
-                }
-                window.open(
-                  "https://shopee.ph/Pet-Ear-Cleaner-Natural-Advanced-Ear-Cleaning-Solution-(120ml-Bottle)-i.715097536.22335054470",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
-              className="flex items-center justify-center gap-3 rounded-full bg-[#ee4d2d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#d63e20] duration-300"
-            >
-              Shop on Shopee
-            </button>
+           <button
+  onClick={() => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "AddToCart", {
+        content_name: "Pet Fresh Ear Cleaner",
+        platform: "Shopee",
+      });
+    }
+
+    window.open(
+      "https://shopee.ph/YOUR-SHOPEE-LINK",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }}
+  className="flex items-center justify-center gap-3 rounded-full bg-[#ee4d2d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#d63e20] duration-300"
+>
+  Shop on Shopee
+</button>
+
 
             {/* Lazada */}
-            <button
-              onClick={() => {
-                if (typeof window !== "undefined" && (window as any).fbq) {
-                  (window as any).fbq("track", "AddToCart", {
-                    content_name: "Pet Fresh Ear Cleaner",
-                    content_type: "product",
-                    platform: "Lazada",
-                  });
-                }
-                window.open(
-                  "https://www.lazada.com.ph/products/pdp-i3684150651-s19345704229.html",
-                  "_blank",
-                  "noopener,noreferrer"
-                );
-              }}
-              className="flex items-center justify-center gap-3 rounded-full bg-[#0f146d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#0a0e52] duration-300"
-            >
-              Shop on Lazada
-            </button>
+           <button
+  onClick={() => {
+    if (typeof window !== "undefined" && (window as any).fbq) {
+      (window as any).fbq("track", "AddToCart", {
+        content_name: "Pet Fresh Ear Cleaner",
+        platform: "Lazada",
+      });
+    }
+
+    window.open(
+      "https://www.lazada.com.ph/YOUR-LAZADA-LINK",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  }}
+  className="flex items-center justify-center gap-3 rounded-full bg-[#0f146d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#0a0e52] duration-300"
+>
+  Shop on Lazada
+</button>
+
 
           </div>
 
