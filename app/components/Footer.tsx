@@ -41,7 +41,9 @@ export default function Footer() {
               <FooterLink href="/" label="Home" />
               <FooterLink href="/products" label="Shop" />
               <FooterLink href="/about" label="Story" />
+              <FooterLink href="/pet-care" label="Pet Care Guide" />
               <FooterLink href="/for-groomers" label="Professional" />
+              
             </ul>
           </div>
 
@@ -50,7 +52,7 @@ export default function Footer() {
             <h4 className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#8B7E6A] mb-5">Connect</h4>
             <div className="space-y-4 text-xs text-white/50">
               <p><span className="block text-[8px] text-white/20 uppercase tracking-widest mb-1">Email</span> petfreshph@gmail.com</p>
-              <p><span className="block text-[8px] text-white/20 uppercase tracking-widest mb-1">Viber</span> +63 (917) 000 0000</p>
+              <p><span className="block text-[8px] text-white/20 uppercase tracking-widest mb-1">Viber</span> +63 (917) 00000</p>
             </div>
           </div>
         </div>
