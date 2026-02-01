@@ -100,15 +100,23 @@ export default function PetCarePage() {
             </h2>
             <p className="mt-4 text-[#1A1A1A]/70 font-light leading-relaxed">
   Many dogs experience sensitivity not because they are fragile, but
-  because their care is too aggressive. Thoughtful grooming favors
-  <a
+  because their care is too aggressive. Thoughtful grooming favors{" "}
+  <Link
+    href="/pet-care/sensitive-dog-skin"
+    className="underline decoration-[#8B7E6A]/40 underline-offset-4 hover:text-[#8B7E6A] transition"
+  >
+    routines designed for sensitive skin
+  </Link>
+  {", "}supported by{" "}
+  <Link
     href="/products"
     className="underline decoration-[#8B7E6A]/40 underline-offset-4 hover:text-[#8B7E6A] transition"
   >
-    {" "}pH-balanced, biologically respectful formulations
-  </a>
+    pH-balanced, biologically respectful formulations
+  </Link>
   {" "}that calm rather than overwhelm. Grooming should feel grounding, not corrective.
 </p>
+
 
           </section>
         </FadeIn>
