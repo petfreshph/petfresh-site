@@ -76,12 +76,19 @@ export default function PetCarePage() {
             <h2 className={`${fraunces.className} text-2xl md:text-3xl text-[#1A1A1A]`}>
               Ear Care as Preventative Care
             </h2>
-            <p className="mt-4 text-[#1A1A1A]/70 font-light leading-relaxed">
-              The ears are often the first place discomfort appears in humid
-              climates. Regular, sting-free ear care helps dissolve buildup,
-              reduce odor, and prevent issues before they arise, especially for
-              dogs with folded or sensitive ears.
-            </p>
+           <p className="mt-4 text-[#1A1A1A]/70 font-light leading-relaxed">
+  The ears are often the first place discomfort appears in humid
+  climates. Regular, sting-free routines, such as{" "}
+  <Link
+    href="/pet-care/ear-care-for-dogs"
+    className="underline decoration-[#8B7E6A]/40 underline-offset-4 hover:text-[#8B7E6A] transition"
+  >
+    ear care for dogs in tropical climates
+  </Link>
+  {", "}help dissolve buildup, reduce odor, and prevent issues before
+  they arise, especially for dogs with folded or sensitive ears.
+</p>
+
           </section>
         </FadeIn>
 
