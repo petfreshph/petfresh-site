@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import FadeIn from "@/app/components/FadeIn";
 import { Fraunces, Inter } from "next/font/google";
+import Link from "next/link";
+
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -52,12 +54,19 @@ export default function PetCarePage() {
             <h2 className={`${fraunces.className} text-2xl md:text-3xl text-[#1A1A1A]`}>
               Hygiene in Tropical Climates
             </h2>
-            <p className="mt-4 text-[#1A1A1A]/70 font-light leading-relaxed">
-              In warm and humid environments, dogs are more prone to odor, skin
-              imbalance, and irritation. Gentle cleansing rituals help maintain
-              comfort without disrupting the skin’s natural barrier. Less
-              stripping. More balance. Always respect.
-            </p>
+           <p className="mt-4 text-[#1A1A1A]/70 font-light leading-relaxed">
+  In warm and humid environments, dogs are more prone to odor, skin
+  imbalance, and irritation. Gentle cleansing rituals help maintain
+  comfort without disrupting the skin’s natural barrier. Understanding{" "}
+  <Link
+    href="/pet-care/dog-hygiene-philippines"
+    className="underline decoration-[#8B7E6A]/40 underline-offset-4 hover:text-[#8B7E6A] transition"
+  >
+    dog hygiene in tropical climates
+  </Link>
+  {" "}helps pet owners choose routines that favor balance over force.
+</p>
+
           </section>
         </FadeIn>
 
