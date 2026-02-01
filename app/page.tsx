@@ -146,7 +146,7 @@ export default function HomePage() {
     }
 
     window.open(
-      "https://shopee.ph/YOUR-SHOPEE-LINK",
+      "https://shopee.ph/Pet-Ear-Cleaner-Natural-Advanced-Ear-Cleaning-Solution-(120ml-Bottle)-i.715097536.22335054470?extraParams=%7B%22display_model_id%22%3A146762940517%7D",
       "_blank",
       "noopener,noreferrer"
     );
@@ -168,7 +168,7 @@ export default function HomePage() {
     }
 
     window.open(
-      "https://www.lazada.com.ph/YOUR-LAZADA-LINK",
+      "https://www.lazada.com.ph/products/pdp-i3684150651-s19345704229.html?spm=a2o4l.10450891.0.0.49c61480Qm5US4&search=store&mp=3",
       "_blank",
       "noopener,noreferrer"
     );
