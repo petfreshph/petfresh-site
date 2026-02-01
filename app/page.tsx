@@ -94,75 +94,116 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. BEST SELLER SECTION (The Social Proof "Trust" Block) */}
-      <section className="relative z-30 py-20 px-6">
-        <FadeIn direction="up">
-          <div className="mx-auto max-w-5xl rounded-3xl bg-white p-8 md:p-12 shadow-[0_20px_50px_rgba(139,126,106,0.12)] border border-[#8B7E6A]/5">
-            <div className="flex flex-col md:flex-row items-center gap-12">
-              
-              {/* Product Visual */}
-              <div className="relative w-full md:w-2/5 flex justify-center">
-                <div className="absolute inset-0 bg-[#8B7E6A]/5 rounded-full blur-3xl animate-pulse" />
-                <Image 
-                  src="/images/products/earcleaner.png" 
-                  alt="Pet Fresh Organic Ear Cleaner"
-                  width={380}
-                  height={550}
-                  className="relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                />
-              </div>
+      {/* 2. BEST SELLER SECTION (Social Proof + Conversion Block) */}
+<section className="relative z-30 py-20 px-6">
+  <FadeIn direction="up">
+    <div className="mx-auto max-w-5xl rounded-3xl bg-white p-8 md:p-12 shadow-[0_20px_50px_rgba(139,126,106,0.12)] border border-[#8B7E6A]/5">
+      <div className="flex flex-col md:flex-row items-center gap-12">
 
-              {/* Trust Content */}
-              <div className="w-full md:w-3/5 text-center md:text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B7E6A]/10 text-[#8B7E6A] text-[10px] font-bold uppercase tracking-widest mb-6">
-                  <span className="flex h-2 w-2 rounded-full bg-[#8B7E6A] animate-ping" />
-                  Best Seller
-                </div>
+        {/* Product Visual */}
+        <div className="relative w-full md:w-2/5 flex justify-center">
+          <div className="absolute inset-0 bg-[#8B7E6A]/5 rounded-full blur-3xl animate-pulse" />
+          <Image
+            src="/images/products/earcleaner.png"
+            alt="Pet Fresh Organic Ear Cleaner"
+            width={380}
+            height={550}
+            priority
+            className="relative z-10 drop-shadow-2xl hover:scale-105 transition-transform duration-500"
+          />
+        </div>
 
-                <h2 className={`${fraunces.className} text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] leading-tight`}>
-                  Trusted in <span className="text-[#8B7E6A]">5,000+</span> Rituals
-                </h2>
+        {/* Trust + Conversion Content */}
+        <div className="w-full md:w-3/5 text-center md:text-left">
 
-                <p className="mt-6 text-lg text-[#6f6f6f] leading-relaxed">
-                  Our Veterinary-strength Organic Ear Cleaner is PH’s top-rated solution for dissolving wax and eliminating odors. A gentle, sting-free formula trusted by 5,000+ pet owners across Shopee, Lazada, and professional groomers.
-                </p>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#8B7E6A]/10 text-[#8B7E6A] text-[10px] font-bold uppercase tracking-widest mb-6">
+            <span className="flex h-2 w-2 rounded-full bg-[#8B7E6A] animate-ping" />
+            PH Best Seller
+          </div>
 
-                {/* --- MARKETPLACE BUTTONS (Same format as ProductSpotlight) --- */}
-                <div className="mt-8 flex flex-col sm:flex-row gap-3 md:gap-4">
-                  <a 
-                    href="https://shopee.ph/Pet-Ear-Cleaner-Natural-Advanced-Ear-Cleaning-Solution-(120ml-Bottle)-i.715097536.22335054470?extraParams=%7B%22display_model_id%22%3A146762940517%7D" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 rounded-full bg-[#ee4d2d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#d63e20] duration-300"
-                  >
-                    Shop on Shopee
-                  </a>
-                  <a 
-                    href="https://www.lazada.com.ph/products/pdp-i3684150651-s19345704229.html?spm=a2o4l.10450891.0.0.49c61480S3pMdV&search=store&mp=3" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-3 rounded-full bg-[#0f146d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#0a0e52] duration-300"
-                  >
-                    Shop on Lazada
-                  </a>
-                </div>
+          {/* Headline */}
+          <h2 className={`${fraunces.className} text-3xl md:text-4xl lg:text-5xl font-semibold text-[#1A1A1A] leading-tight`}>
+            Trusted in <span className="text-[#8B7E6A]">5,000+</span> Pet Care Rituals
+          </h2>
 
-                <div className="mt-10 pt-8 border-t border-gray-100 flex flex-wrap items-center justify-center md:justify-start gap-8">
-                   <div className="text-center md:text-left">
-                      <p className="text-2xl font-bold text-[#1A1A1A]">4.9/5</p>
-                      <p className="text-[10px] uppercase tracking-wider text-[#8B7E6A] font-bold">Marketplace Rating</p>
-                   </div>
-                   <div className="h-10 w-[1px] bg-gray-200 hidden sm:block" />
-                   <div className="text-center md:text-left">
-                      <p className="text-2xl font-bold text-[#1A1A1A]">Vet-Grade</p>
-                      <p className="text-[10px] uppercase tracking-wider text-[#8B7E6A] font-bold">Professional Quality</p>
-                   </div>
-                </div>
-              </div>
+          {/* Copy */}
+          <p className="mt-6 text-lg text-[#6f6f6f] leading-relaxed">
+            Our veterinary-strength organic ear cleaner is the Philippines’ most trusted solution for dissolving wax and eliminating odor. A gentle, sting-free formula relied on by pet parents, groomers, and clinics nationwide.
+          </p>
+
+          {/* Marketplace CTAs with Meta Pixel Events */}
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 md:gap-4">
+
+            {/* Shopee */}
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined" && (window as any).fbq) {
+                  (window as any).fbq("track", "AddToCart", {
+                    content_name: "Pet Fresh Ear Cleaner",
+                    content_type: "product",
+                    platform: "Shopee",
+                  });
+                }
+                window.open(
+                  "https://shopee.ph/Pet-Ear-Cleaner-Natural-Advanced-Ear-Cleaning-Solution-(120ml-Bottle)-i.715097536.22335054470",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+              className="flex items-center justify-center gap-3 rounded-full bg-[#ee4d2d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#d63e20] duration-300"
+            >
+              Shop on Shopee
+            </button>
+
+            {/* Lazada */}
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined" && (window as any).fbq) {
+                  (window as any).fbq("track", "AddToCart", {
+                    content_name: "Pet Fresh Ear Cleaner",
+                    content_type: "product",
+                    platform: "Lazada",
+                  });
+                }
+                window.open(
+                  "https://www.lazada.com.ph/products/pdp-i3684150651-s19345704229.html",
+                  "_blank",
+                  "noopener,noreferrer"
+                );
+              }}
+              className="flex items-center justify-center gap-3 rounded-full bg-[#0f146d] px-8 py-3.5 text-[11px] font-bold uppercase tracking-widest text-white transition hover:translate-y-[-2px] hover:shadow-lg hover:bg-[#0a0e52] duration-300"
+            >
+              Shop on Lazada
+            </button>
+
+          </div>
+
+          {/* Proof Stats */}
+          <div className="mt-10 pt-8 border-t border-gray-100 flex flex-wrap items-center justify-center md:justify-start gap-8">
+            <div className="text-center md:text-left">
+              <p className="text-2xl font-bold text-[#1A1A1A]">4.9 / 5</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8B7E6A] font-bold">
+                Marketplace Rating
+              </p>
+            </div>
+
+            <div className="h-10 w-[1px] bg-gray-200 hidden sm:block" />
+
+            <div className="text-center md:text-left">
+              <p className="text-2xl font-bold text-[#1A1A1A]">Vet-Grade</p>
+              <p className="text-[10px] uppercase tracking-wider text-[#8B7E6A] font-bold">
+                Professional Quality
+              </p>
             </div>
           </div>
-        </FadeIn>
-      </section>
+
+        </div>
+      </div>
+    </div>
+  </FadeIn>
+</section>
+
 
 
       {/* 3. SUBSEQUENT SECTIONS */}
