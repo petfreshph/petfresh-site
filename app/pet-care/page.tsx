@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Pet Care in the Philippines | Calm, Vet-Grade Pet Care Rituals",
+  title: "Pet Care in the Philippines | Vet-Grade Dog Care Rituals",
   description:
-    "A thoughtful guide to pet care in the Philippines. Explore grooming rituals, ear care, and gentle routines designed for sensitive dogs in tropical climates.",
+    "A thoughtful guide to dog care and pet care in the Philippines. Explore grooming rituals, ear care, and gentle routines for sensitive dogs in tropical climates.",
 };
 
 export default function PetCarePage() {
