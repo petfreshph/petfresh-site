@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { GoogleAnalytics } from "@next/third-parties/google";
 
 import "./globals.css";
 import Footer from "./components/Footer";
@@ -45,7 +44,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_PH",
-    url: "https://petfreshph.com",
     siteName: "Pet Fresh Philippines",
     title: "Pet Fresh Philippines | Pet Grooming & Private Label",
     description:
@@ -100,8 +98,23 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en-PH">
       <head>
+        {/* Organization Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+      </head>
+
+      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
+        {children}
+
+        <NeoChat />
+        <Footer />
+
         {/* Meta Pixel */}
         <Script
           id="meta-pixel"
@@ -122,21 +135,35 @@ export default function RootLayout({
           }}
         />
 
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-        />
-      </head>
+        {/* Google Analytics */}
+        {GA_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+              strategy="afterInteractive"
+            />
 
-      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
-        {children}
-        <NeoChat />
-        <Footer />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
 
-        {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
+                  function gtag(){
+                    dataLayer.push(arguments);
+                  }
+
+                  gtag('js', new Date());
+
+                  gtag('config', '${GA_ID}', {
+                    send_page_view: true
+                  });
+                `,
+              }}
+            />
+          </>
+        ) : null}
       </body>
     </html>
   );
