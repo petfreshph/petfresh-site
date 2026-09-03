@@ -1,58 +1,77 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
 import Footer from "./components/Footer";
+import NeoChat from "./components/NeoChat";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+const GOOGLE_VERIFICATION = process.env.GOOGLE_SITE_VERIFICATION;
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://petfreshph.com"),
+
   title: {
-    default: "Pet Fresh | Organic Dog Shampoo & Ear Cleaner Philippines",
-    template: "%s | Pet Fresh Organic Pet Care",
+    default: "Pet Fresh Philippines | Dog Shampoo & Private Label Pet Care",
+    template: "%s | Pet Fresh Philippines",
   },
+
   description:
-    "Veterinary-grade organic pet care in the Philippines. Best-selling dog shampoo for sensitive skin and gentle ear cleaner formulated for tropical climates.",
-  keywords: [
-    "Dog Shampoo Philippines",
-    "Organic Pet Ear Cleaner",
-    "Best Dog Ear Cleaner",
-    "Sensitive Dog Skin Philippines",
-    "Hypoallergenic Dog Shampoo",
-    "Madre de Cacao Dog Shampoo",
-    "Pet Care Philippines",
-    "Vet Grade Pet Care",
-  ],
+    "Philippine-made dog shampoo, ear cleaner and pet grooming products for pet owners and professional groomers. Private label and custom pet-care manufacturing available from Pet Fresh.",
+
   authors: [{ name: "Pet Fresh Philippines" }],
-  creator: "Pet Fresh",
+  creator: "Pet Fresh Philippines",
+  publisher: "Pet Fresh Philippines",
+
+  verification: GOOGLE_VERIFICATION
+    ? {
+        google: GOOGLE_VERIFICATION,
+      }
+    : undefined,
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   openGraph: {
     type: "website",
     locale: "en_PH",
     url: "https://petfreshph.com",
     siteName: "Pet Fresh Philippines",
-    title: "Pet Fresh | Veterinary-Grade Pet Care in the Philippines",
+    title: "Pet Fresh Philippines | Pet Grooming & Private Label",
     description:
-      "Organic dog shampoo and ear cleaner designed for sensitive skin and tropical climates. Trusted by pet owners and groomers nationwide.",
+      "Philippine-made pet grooming products for owners and professionals, with private label and custom pet-care manufacturing.",
     images: [
       {
         url: "/images/og-main.jpg",
         width: 1200,
         height: 630,
-        alt: "Pet Fresh Organic Dog Shampoo and Ear Cleaner",
+        alt: "Pet Fresh dog shampoo and pet grooming products",
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Pet Fresh PH | Organic & Vet-Grade Dog Care",
+    title: "Pet Fresh Philippines | Pet Grooming & Private Label",
     description:
-      "Gentle, pH-balanced pet care for dogs living in tropical climates.",
+      "Philippine-made grooming products and private-label pet-care manufacturing.",
     images: ["/images/og-main.jpg"],
     creator: "@petfreshph",
   },
+
   icons: {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
-  },
-  alternates: {
-    canonical: "https://petfreshph.com",
   },
 };
 
@@ -61,29 +80,28 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://petfreshph.com/#organization",
+    name: "Pet Fresh Philippines",
+    alternateName: "Pet Fresh",
+    url: "https://petfreshph.com",
+    logo: "https://petfreshph.com/logo.png",
+    email: "petfreshph@gmail.com",
+    areaServed: {
+      "@type": "Country",
+      name: "Philippines",
+    },
+    sameAs: [
+      "https://facebook.com/petfreshph",
+      "https://instagram.com/petfreshph",
+    ],
+  };
+
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics (GA4) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-Y8CFVT14W2"
-          strategy="afterInteractive"
-        />
-        <Script
-          id="ga4-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-Y8CFVT14W2', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
-
         {/* Meta Pixel */}
         <Script
           id="meta-pixel"
@@ -103,30 +121,22 @@ export default function RootLayout({
             `,
           }}
         />
-      </head>
 
-      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
         {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Pet Fresh Philippines",
-              url: "https://petfreshph.com",
-              logo: "https://petfreshph.com/logo.png",
-              sameAs: [
-                "https://facebook.com/petfreshph",
-                "https://instagram.com/petfreshph",
-                "https://www.tiktok.com/@pet_freshph",
-              ],
-            }),
+            __html: JSON.stringify(organizationSchema),
           }}
         />
+      </head>
 
+      <body className="antialiased selection:bg-[#8B7E6A] selection:text-white bg-[#F4EFE7]">
         {children}
+        <NeoChat />
         <Footer />
+
+        {GA_ID ? <GoogleAnalytics gaId={GA_ID} /> : null}
       </body>
     </html>
   );
